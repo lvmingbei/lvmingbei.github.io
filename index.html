@@ -1,1 +1,28 @@
-Hello World
+<html>
+<head>
+<script type="text/javascript">
+function checkSubmit(){
+        var url = 'baidumap://map/geocoder?location='+baidumap.lat.value+','+baidumap.lng.value+'&coord_type='+baidumap.locationtype.value+'&src=webapp.rgeo.yourCompanyName.yourAppName';
+        window.open(url);
+}
+</script>
+</head>
+
+<body>
+<form name="baidumap" onsubmit="return checkSubmit();">
+经度:<br>
+<input type="text" name="lat">
+<br>
+纬度:<br>
+<input type="text" name="lng">
+<br>
+坐标类型：
+<input type="radio" name="locationtype" value="bd09ll" checked>百度经纬度
+<input type="radio" name="locationtype" value="gcj02">国测局加密
+<input type="radio" name="locationtype" value="wgs84">gps
+
+<br>
+<input class="button" type="submit" value="来一发">
+</form>
+<body>
+</html>
